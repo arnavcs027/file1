@@ -1,0 +1,245 @@
+
+aadit@LAPTOP-ADITYA MINGW32 ~/OneDrive/Desktop/gitlab/Lab06 (master)
+$ git clone https://github.com/AdityaCS009/Lab04.git
+Cloning into 'Lab04'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (3/3), done.
+
+aadit@LAPTOP-ADITYA MINGW32 ~/OneDrive/Desktop/gitlab/Lab06 (master)
+$ git fetch
+
+aadit@LAPTOP-ADITYA MINGW32 ~/OneDrive/Desktop/gitlab/Lab06 (master)
+$ git checkout -b fb3
+Switched to a new branch 'fb3'
+
+aadit@LAPTOP-ADITYA MINGW32 ~/OneDrive/Desktop/gitlab/Lab06 (fb3)
+$ git rebase
+There is no tracking information for the current branch.
+Please specify which branch you want to rebase against.
+See git-rebase(1) for details.
+
+    git rebase '<branch>'
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=<remote>/<branch> fb3
+
+
+aadit@LAPTOP-ADITYA MINGW32 ~/OneDrive/Desktop/gitlab/Lab06 (fb3)
+$ git rebase fb3
+Current branch fb3 is up to date.
+
+aadit@LAPTOP-ADITYA MINGW32 ~/OneDrive/Desktop/gitlab/Lab06 (fb3)
+$ git rebase main
+fatal: invalid upstream 'main'
+
+aadit@LAPTOP-ADITYA MINGW32 ~/OneDrive/Desktop/gitlab/Lab06 (fb3)
+$ git rebase master
+Current branch fb3 is up to date.
+
+aadit@LAPTOP-ADITYA MINGW32 ~/OneDrive/Desktop/gitlab/Lab06 (fb3)
+$ vi aalo.txt
+
+aadit@LAPTOP-ADITYA MINGW32 ~/OneDrive/Desktop/gitlab/Lab06 (fb3)
+$ git add .
+warning: adding embedded git repository: Lab06/Lab04
+hint: You've added another git repository inside your current repository.
+hint: Clones of the outer repository will not contain the contents of
+hint: the embedded repository and will not know how to obtain it.
+hint: If you meant to add a submodule, use:
+hint:
+hint:   git submodule add <url> Lab06/Lab04
+hint:
+hint: If you added this path by mistake, you can remove it from the
+hint: index with:
+hint:
+hint:   git rm --cached Lab06/Lab04
+hint:
+hint: See "git help submodule" for more information.
+warning: in the working copy of 'Lab06/aalo.txt', LF will be replaced by CRLF the next time Git touches it
+
+aadit@LAPTOP-ADITYA MINGW32 ~/OneDrive/Desktop/gitlab/Lab06 (fb3)
+$ git commit -m"sd"
+[fb3 44c3269] sd
+ 3 files changed, 4 insertions(+), 1 deletion(-)
+ create mode 160000 Lab06/Lab04
+ create mode 100644 Lab06/aalo.txt
+
+aadit@LAPTOP-ADITYA MINGW32 ~/OneDrive/Desktop/gitlab/Lab06 (fb3)
+$ git push
+fatal: No configured push destination.
+Either specify the URL from the command-line or configure a remote repository using
+
+    git remote add <name> <url>
+
+and then push using the remote name
+
+    git push <name>
+
+
+aadit@LAPTOP-ADITYA MINGW32 ~/OneDrive/Desktop/gitlab/Lab06 (fb3)
+$ git remote add aalo.txt https://github.com/AdityaCS009/Lab04.git
+
+aadit@LAPTOP-ADITYA MINGW32 ~/OneDrive/Desktop/gitlab/Lab06 (fb3)
+$ git push aalo.txt
+fatal: The current branch fb3 has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream aalo.txt fb3
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+aadit@LAPTOP-ADITYA MINGW32 ~/OneDrive/Desktop/gitlab/Lab06 (fb3)
+$ git push --set-upstram aalo.txt fb3
+error: unknown option `set-upstram'
+usage: git push [<options>] [<repository> [<refspec>...]]
+
+    -v, --verbose         be more verbose
+    -q, --quiet           be more quiet
+    --repo <repository>   repository
+    --all                 push all refs
+    --mirror              mirror all refs
+    -d, --delete          delete refs
+    --tags                push tags (can't be used with --all or --mirror)
+    -n, --dry-run         dry run
+    --porcelain           machine-readable output
+    -f, --force           force updates
+    --force-with-lease[=<refname>:<expect>]
+                          require old value of ref to be at this value
+    --force-if-includes   require remote updates to be integrated locally
+    --recurse-submodules (check|on-demand|no)
+                          control recursive pushing of submodules
+    --thin                use thin pack
+    --receive-pack <receive-pack>
+                          receive pack program
+    --exec <receive-pack>
+                          receive pack program
+    -u, --set-upstream    set upstream for git pull/status
+    --progress            force progress reporting
+    --prune               prune locally removed refs
+    --no-verify           bypass pre-push hook
+    --follow-tags         push missing but relevant tags
+    --signed[=(yes|no|if-asked)]
+                          GPG sign the push
+    --atomic              request atomic transaction on remote side
+    -o, --push-option <server-specific>
+                          option to transmit
+    -4, --ipv4            use IPv4 addresses only
+    -6, --ipv6            use IPv6 addresses only
+
+
+aadit@LAPTOP-ADITYA MINGW32 ~/OneDrive/Desktop/gitlab/Lab06 (fb3)
+$ git push --set-upstream aalo.txt fb3
+Enumerating objects: 22, done.
+Counting objects: 100% (22/22), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (14/14), done.
+Writing objects: 100% (22/22), 1.73 KiB | 887.00 KiB/s, done.
+Total 22 (delta 4), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (4/4), done.
+remote:
+remote: Create a pull request for 'fb3' on GitHub by visiting:
+remote:      https://github.com/AdityaCS009/Lab04/pull/new/fb3
+remote:
+To https://github.com/AdityaCS009/Lab04.git
+ * [new branch]      fb3 -> fb3
+branch 'fb3' set up to track 'aalo.txt/fb3'.
+
+aadit@LAPTOP-ADITYA MINGW32 ~/OneDrive/Desktop/gitlab/Lab06 (fb3)
+$ git log
+commit 44c3269bb3d5b272f460bc71d7bf7229480f2152 (HEAD -> fb3, aalo.txt/fb3)
+Author: Aditya <aadityakumarr123@gmail.com>
+Date:   Wed Mar 6 23:01:15 2024 +0530
+
+    sd
+
+commit 95e1697e685b088752bceb04b21a4c5aa4ddc9e5 (master)
+Author: Aditya <aadityakumarr123@gmail.com>
+Date:   Wed Mar 6 22:44:40 2024 +0530
+
+    zxhxuduashdua
+
+commit e96393802ef31cb6cd761f3fb951f582a987d721 (Feature3)
+Author: Aditya <aadityakumarr123@gmail.com>
+Date:   Wed Mar 6 22:23:17 2024 +0530
+
+    ss
+
+commit 097ee593792ea344da37c01e46fa3b5fb3fbae7d
+Author: Aditya <aadityakumarr123@gmail.com>
+Date:   Wed Mar 6 21:57:39 2024 +0530
+
+    CommitAll
+
+commit 589d123cd51071529a0cd38adbb398062e64045c (Feature2, Feature1)
+Author: Aditya <aadityakumarr123@gmail.com>
+Date:   Wed Mar 6 21:20:26 2024 +0530
+
+    LAB02
+
+commit af56d968409682155b310edf139546b9cc198463
+Author: Aditya <aadityakumarr123@gmail.com>
+Date:   Wed Mar 6 21:19:17 2024 +0530
+
+    LAB1
+
+aadit@LAPTOP-ADITYA MINGW32 ~/OneDrive/Desktop/gitlab/Lab06 (fb3)
+$ git tag v1.0
+
+aadit@LAPTOP-ADITYA MINGW32 ~/OneDrive/Desktop/gitlab/Lab06 (fb3)
+$ git tag v2.0 589d123cd51071529a0cd38adbb398062e64045c
+
+aadit@LAPTOP-ADITYA MINGW32 ~/OneDrive/Desktop/gitlab/Lab06 (fb3)
+$ git cherry-pick 95e1697e685b088752bceb04b21a4c5aa4ddc9e5^..589d123cd51071529a0cd38adbb398062e64045c
+error: empty commit set passed
+fatal: cherry-pick failed
+
+aadit@LAPTOP-ADITYA MINGW32 ~/OneDrive/Desktop/gitlab/Lab06 (fb3)
+$ git cherry-pick e96393802ef31cb6cd761f3fb951f582a987d721^.. 44c3269bb3d5b272f460bc71d7bf7229480f2152
+The previous cherry-pick is now empty, possibly due to conflict resolution.
+If you wish to commit it anyway, use:
+
+    git commit --allow-empty
+
+Otherwise, please use 'git cherry-pick --skip'
+On branch fb3
+Your branch is up to date with 'aalo.txt/fb3'.
+
+Cherry-pick currently in progress.
+  (run "git cherry-pick --continue" to continue)
+  (use "git cherry-pick --skip" to skip this patch)
+  (use "git cherry-pick --abort" to cancel the cherry-pick operation)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+  (commit or discard the untracked or modified content in submodules)
+        modified:   Lab05 (modified content)
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+aadit@LAPTOP-ADITYA MINGW32 ~/OneDrive/Desktop/gitlab/Lab06 (fb3|CHERRY-PICKING)
+$ gti commit --allow-empty
+bash: gti: command not found
+
+aadit@LAPTOP-ADITYA MINGW32 ~/OneDrive/Desktop/gitlab/Lab06 (fb3|CHERRY-PICKING)
+$ git commit --allow-empty
+[fb3 bb705bc] wydfuyjddvewgyjdvewyjgdss
+ Date: Wed Mar 6 22:23:17 2024 +0530
+
+aadit@LAPTOP-ADITYA MINGW32 ~/OneDrive/Desktop/gitlab/Lab06 (fb3|CHERRY-PICKING)
+$ git checkout master
+warning: unable to rmdir 'Lab06/Lab04': Directory not empty
+Switched to branch 'master'
+M       Lab05
+M       Lab06/Lab05
+
+aadit@LAPTOP-ADITYA MINGW32 ~/OneDrive/Desktop/gitlab/Lab06 (master|CHERRY-PICKING)
+$ git cherry-pick e96393802ef31cb6cd761f3fb951f582a987d721^.. 44c3269bb3d5b272f460bc71d7bf7229480f2152
+error: cherry-pick is already in progress
+hint: try "git cherry-pick (--continue | --abort | --quit)"
+fatal: cherry-pick failed
